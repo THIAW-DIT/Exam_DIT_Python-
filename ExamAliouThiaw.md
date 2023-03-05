@@ -51,6 +51,60 @@ import polars as pl
 This will allow you to use polars in your Python code. :+1:
 
 # Pratical example
+There are many datasets available for crime fiction analysis. Here are some examples:
+
+**Kaggle**: Kaggle is a popular platform for data analysis. It offers many crime fiction datasets, including data on crime novels, crime TV shows, and crime movies. You can explore the data on Kaggle and download it to use in your projects.
+
+**Goodreads**: Goodreads is a readers' reference website, which allows users to discover new books and share their opinions on the books they have read. The site has an extensive database of crime novels, which can be downloaded for analysis.
+
+Project Gutenberg: Project Gutenberg is a free digital library of e-books. It offers a collection of classic detective books that can be downloaded for analysis.
+
+**IMDb**: IMDb is an online database of movies, TV series, video games and entertainment. It offers many crime movie datasets, which can be used for analysis.
+
+`nltk`: `nltk` is a Python library for natural language processing. It offers pre-processed text corpora, including crime novels, such as the Sherlock Holmes Corpus, which can be used to train text classification or generation models.
+
+***Polars Expressions***
+
+The following is an expression:
+```python
+pl.col("foo").sort().head(2)
+```
+The snippet above says:
+
+1. Select column "foo"
+2. Then sort the column (not in reversed order)
+3. Then take the first two values of the sorted output
+
+The power of expressions is that every expression produces a new expression, and that they can be piped together. You can run an expression by passing them to one of `Polars` execution contexts.
+
+Here we run two expressions by running `df.select`:
+
+```python
+df.select([
+    pl.col("foo").sort().head(2),
+    pl.col("bar").filter(pl.col("foo") == 1).sum()
+])
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
