@@ -178,7 +178,100 @@ shape: (3, 2)
 └──────────┴──────────┘
 ```
 
+> *So far you have taken note* :writing_hand:
+
 # Comparative analysis
+
+This section explores the main aspects of how the Polars package differs from Pandas regarding syntax and execution time:
+
+* Reading Data
+
+* Selecting and Filtering Data
+
+* Creating New Columns
+ 
+* Grouping and Aggregation
+
+* Missing Data
+
+**Reading Data**
+
+Reading a CSV file in Polars will feel familiar because you can use the `.read_csv()` method like in Pandas:
+
+```python
+# Pandas
+pd.read_csv('example.csv')
+
+# Polars
+pl.read_csv('example.csv')
+```
+The resulting execution times to read the sample dataset in Pandas and Polars are shown below:
+
+![time of excute](https://miro.medium.com/v2/resize:fit:640/format:webp/0*yXjcvIcyJK7OxZOU.png)
+
+**Selecting and Filtering Data**
+
+The first major difference between Pandas and Polars is that Polars does not use an index. Instead, each row is indexed by its integer position in the DataFrame.
+
+Although the same Pandas code will run with Polars, it is not the best practice. In Polars, you should use the .select() method to select data.
+
+```python
+# Pandas
+df[['col1', 'col2']] 
+
+# The above code will run with Polars as well, 
+# but the correct way in Polars is:
+df.select(pl.col(['col1', 'col2']))
+```
+The resulting execution times to select data in Pandas and Polars are shown below.
+
+![second img](https://miro.medium.com/v2/resize:fit:640/format:webp/0*rNvAISXVQNXxYPxP.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[source](https://towardsdatascience.com/pandas-vs-polars-a-syntax-and-speed-comparison-5aa54e27497e#0602)
 
 
 
