@@ -62,6 +62,9 @@ Project Gutenberg: Project Gutenberg is a free digital library of e-books. It of
 **IMDb**: IMDb is an online database of movies, TV series, video games and entertainment. It offers many crime movie datasets, which can be used for analysis.
 
 `nltk`: `nltk` is a Python library for natural language processing. It offers pre-processed text corpora, including crime novels, such as the Sherlock Holmes Corpus, which can be used to train text classification or generation models.
+```python
+pip install nltk
+```
 
 ***Polars Expressions***
 
@@ -85,6 +88,110 @@ df.select([
     pl.col("bar").filter(pl.col("foo") == 1).sum()
 ])
 ```
+
+In this section we will go through some examples, but first let's create a dataset:
+
+```python
+import polars as pl
+import numpy as np
+
+np.random.seed(12)
+
+df = pl.DataFrame(
+    {
+        "nrs": [1, 2, 3, None, 5],
+        "names": ["foo", "ham", "spam", "egg", None],
+        "random": np.random.rand(5),
+        "groups": ["A", "A", "B", "C", "B"],
+    }
+)
+print(df)
+```
+Result
+```python
+shape: (5, 4)
+┌──────┬───────┬──────────┬────────┐
+│ nrs  ┆ names ┆ random   ┆ groups │
+│ ---  ┆ ---   ┆ ---      ┆ ---    │
+│ i64  ┆ str   ┆ f64      ┆ str    │
+╞══════╪═══════╪══════════╪════════╡
+│ 1    ┆ foo   ┆ 0.154163 ┆ A      │
+│ 2    ┆ ham   ┆ 0.74005  ┆ A      │
+│ 3    ┆ spam  ┆ 0.263315 ┆ B      │
+│ null ┆ egg   ┆ 0.533739 ┆ C      │
+│ 5    ┆ null  ┆ 0.014575 ┆ B      │
+└──────┴───────┴──────────┴────────┘
+```
+Count the number of rows in the group:
+
+short form: 
+
+```python
+pl.count("party")
+```
+full form: 
+```python
+pl.col("party").count()
+```
+Get the first value of column in the group:
+
+short form: 
+
+```python
+pl.first("first_element")
+```
+
+full form: 
+
+```python
+pl.col("last_name").first()
+```
+***Numpy interop***
+
+`Polars` expressions support `NumPy`. See [here](https://numpy.org/doc/stable/reference/ufuncs.html#available-ufuncs) for a list of all supported numpy functions.
+
+```python
+import polars as pl
+import numpy as np
+
+df = pl.DataFrame({"a": [1, 2, 3], "b": [4, 5, 6]})
+
+out = df.select(
+    [
+        np.log(pl.all()).suffix("_log"),
+    ]
+)
+print(out)
+```
+Result
+
+```python
+shape: (3, 2)
+┌──────────┬──────────┐
+│ a_log    ┆ b_log    │
+│ ---      ┆ ---      │
+│ f64      ┆ f64      │
+╞══════════╪══════════╡
+│ 0.0      ┆ 1.386294 │
+│ 0.693147 ┆ 1.609438 │
+│ 1.098612 ┆ 1.791759 │
+└──────────┴──────────┘
+```
+
+# Comparative analysis
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
