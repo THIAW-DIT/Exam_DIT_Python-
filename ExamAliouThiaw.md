@@ -1,4 +1,4 @@
-![image bibliotheque polars ](polars.png)
+![image bibliotheque polars](https://raw.githubusercontent.com/pola-rs/polars-static/master/logos/polars_github_logo_rect_dark_name.svg)
 
    **Aliou THIAW** 
 
@@ -50,6 +50,7 @@ import polars as pl
 ``` 
 This will allow you to use polars in your Python code. :+1:
 
+# Pratical example
 
 
 
