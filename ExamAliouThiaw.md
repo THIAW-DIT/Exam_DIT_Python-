@@ -325,6 +325,18 @@ The above code gives the following output:
 ```plaintext
 Spent 0.85s
 ```
+# Use case
+
+**Data reading**
+
+You could do the same in polars via
+
+```python
+import polars as pl
+import numpy as np
+df = pl.read_csv("/content/drive/MyDrive/train.csv") 
+df.head(5)
+```
 
 
 
@@ -373,7 +385,10 @@ Spent 0.85s
 
 
 
-
+- https://calmcode.io/polars/read-csv.html
+- https://www.kaggle.com/datasets/hesh97/titanicdataset-traincsv
+- https://docusaurus.io/fr/docs/markdown-features/links
+- https://pola-rs.github.io/polars-book/user-guide/notebooks/introduction_polars-py.html
 
 [source](https://towardsdatascience.com/pandas-vs-polars-a-syntax-and-speed-comparison-5aa54e27497e#0602)
 
