@@ -227,6 +227,69 @@ The resulting execution times to select data in Pandas and Polars are shown belo
 
 ![second img](https://miro.medium.com/v2/resize:fit:640/format:webp/0*rNvAISXVQNXxYPxP.png)
 
+While you would use the `.query()` method in Pandas to filter data, you need to use the `.filter(`) method in Polars.
+
+```python
+# Pandas
+df.query('col1 > 5')
+
+# Polars
+df.filter(pl.col('col') > 5)
+```
+
+The resulting execution times to filter data in Pandas and Polars are shown below.
+
+![my third img](https://miro.medium.com/v2/resize:fit:640/format:webp/0*0NjTuXNhJVReBkea.png)
+
+In contrast to Pandas, Polars can run operations in .select() and .filter() in parallel.
+
+**Creating New Columns**
+
+Creating a new column in Polars also differs from what you might be used to in Pandas. 
+In Polars, you need to use the `.with_column()` or the `.with_columns()` method depending on how many columns you want to create.
+
+```python
+# Pandas
+df_pd["new_col"] = df_pd["col"] * 10
+
+# Polars
+df.with_columns([(pl.col("col") * 10).alias("new_col")])
+
+# Polars for multiple columns
+# df.with_columns([(pl.col("col") * 10).alias("new_col"), ...])
+```
+
+**Grouping and Aggregation**
+
+Grouping and aggregation are slightly different between Pandas and Polars syntax-wise, but both use the `.groupby()` and `.agg()` methods.
+
+```python
+# Pandas
+df_pd.groupby('col1')['col2'].agg('mean')
+
+# Polars
+# df.groupby('col1').agg([pl.col('col2').mean()]) # As suggested in Polars docs
+df.groupby('col1').agg([pl.mean('col2')]) # Shorter
+```
+**Missing Data**
+
+Another major difference between Pandas and Polars is that Pandas uses `NaN` values to indicate missing values, while Polars uses `null`
+
+Thus, instead of the `.fillna()` method in Pandas, you should use the `.fill_null()` method in Polars.
+
+```python
+# Pandas
+df['col2'].fillna(-999)
+
+# Polars
+# df_pd.with_column(pl.col('col2').fill_null(pl.lit(-999))) # As suggested in Polars docs
+df_pd.with_column(pl.col('col2').fill_null(-999)) # Shorter
+```
+***Conclusion***
+
+The main advantage of Polars over Pandas is its speed. If you need to do a lot of data processing on large datasets, you should definitely try Polars.
+
+The main advantage of Polars over Pandas is its speed.
 
 
 
