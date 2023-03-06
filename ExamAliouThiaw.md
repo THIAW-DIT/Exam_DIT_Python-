@@ -291,6 +291,47 @@ The main advantage of Polars over Pandas is its speed. If you need to do a lot o
 
 The main advantage of Polars over Pandas is its speed.
 
+# Polars alternative
+
+The advantage of using polars over pandas is that nowadays we collect a lot of raw and uncleaned data for our data analysis. So before performing any analysis, we need to clean the data. For cleaning, we have to perform a lot of operations on data. Polars provides us with a fast and efficient framework for cleaning and operating on large data. By using polars we can easily clean a large raw data.
+
+Polars is faster and more efficient than pandas. One of the significant problems with pandas is their slow speed and inefficiencies when dealing with larger datasets. The major difference between polars and pandas is speed.
+
+Let us understand the speed difference between pandas and polars in reading a CSV file.
+
+```python
+#Data Loading
+start = perf_counter()
+df_pl = pl.read_csv("tmdb_5000_credits.csv")#not lazy mode
+end = perf_counter()
+print(f"Spent {round(end-start,2)}s.")
+```
+
+The above code gives the following output
+
+```plaintext
+Spent 0.4 s 
+```
+
+```python
+start = perf_counter()
+df_pd = pd.read_csv("tmdb_5000_credits.csv")
+end = perf_counter()
+print(f"Spent {round(end-start,2)}s.")
+```
+
+The above code gives the following output:
+
+```plaintext
+Spent 0.85s
+```
+
+
+
+
+
+
+
 
 
 
@@ -336,6 +377,7 @@ The main advantage of Polars over Pandas is its speed.
 
 [source](https://towardsdatascience.com/pandas-vs-polars-a-syntax-and-speed-comparison-5aa54e27497e#0602)
 
+[source1](https://anamikayadav.hashnode.dev/polars-python-library-a-fast-and-efficient-alternative-to-pandas)
 
 
 
