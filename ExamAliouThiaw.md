@@ -1,5 +1,7 @@
 ![image bibliotheque polars](https://raw.githubusercontent.com/pola-rs/polars-static/master/logos/polars_github_logo_rect_dark_name.svg)
 
+   
+   
    **Aliou THIAW** 
 
  ##  **Table of Contents**
@@ -19,6 +21,8 @@
 - [ Use case](#use-case):
 
 - [Conclusion](#conclusion):
+
+- [Reference](#reference)
 
 # Introduction
 
@@ -403,7 +407,13 @@ df.to_dummies()
 
 # Conclusion
 
+In conclusion, whodunits in Python are an essential tool for data scientists and data analysts looking to explore and analyze complex data. Polars offer a clear and concise syntax for creating high-quality, interactive charts that effectively visualize data and detect hidden trends and patterns.
 
+Polars are also easy to use and customize, offering a wide range of features to customize charts, including changing the visual appearance of charts, changing labels and colors, and creating layered charts. .
+
+Finally, polars is a rapidly growing data visualization library, with frequent updates and enhancements, making it a solid choice for long-term data visualization projects.
+
+# Reference
 
 
 
