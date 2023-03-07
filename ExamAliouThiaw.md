@@ -1,9 +1,6 @@
 ![image bibliotheque polars](https://raw.githubusercontent.com/pola-rs/polars-static/master/logos/polars_github_logo_rect_dark_name.svg)
 
    
-   
-   **Aliou THIAW** 
-
  ##  **Table of Contents**
 
 - [Introduction](#introduction):
@@ -415,49 +412,6 @@ Finally, polars is a rapidly growing data visualization library, with frequent u
 
 # Reference
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - https://pola-rs.github.io/polars/py-polars/html/reference/dataframe/api/polars.DataFrame.describe.html
 - https://calmcode.io/polars/read-csv.html
 - https://www.kaggle.com/datasets/hesh97/titanicdataset-traincsv
@@ -467,7 +421,8 @@ Finally, polars is a rapidly growing data visualization library, with frequent u
 - https://anamikayadav.hashnode.dev/polars-python-library-a-fast-and-efficient-alternative-to-pandas
 
 
-
+# Author: Aliou THIAW  
+![myimage](map.png)
 
 
 
