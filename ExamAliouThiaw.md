@@ -4,13 +4,20 @@
 
  ##  **Table of Contents**
 
-- Introduction:
-- Presentation of Polars:
-- What is Polars:
-- Pratical example:
-- Comparative analysis:
-- Polars alternative:
-- Use case:
+- [Introduction](#introduction):
+
+- [Presentation of Polars](#presentation-of-polars):
+
+- [What is Polars](#what-is-polars):
+
+- [Pratical example](#pratical-example):
+
+- [Comparative analysis](#comparative-analysis):
+
+- [Polars alternative](#polars-alternative):
+
+- [ Use case](#use-case):
+
 - Conclusion:
 
 # Introduction
@@ -337,7 +344,6 @@ import numpy as np
 df = pl.read_csv("/content/drive/MyDrive/train.csv") 
 df.head(5)
 ```
-
 
 
 
