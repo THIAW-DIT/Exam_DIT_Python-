@@ -344,6 +344,57 @@ import numpy as np
 df = pl.read_csv("/content/drive/MyDrive/train.csv") 
 df.head(5)
 ```
+Check duplicate data
+
+```python
+df.filter(df.is_duplicated())
+
+df.is_duplicated()
+```
+
+Data description
+
+```python
+print(df.describe())
+```
+Check for missing data
+
+```python
+print(df.null_count())
+```
+Replace missing data
+
+```python
+df.fill_null(99)
+
+df.fill_null(strategy="forward")
+
+df.fill_null(strategy="max")
+shape: (4, 2)
+┌─────┬──────┐
+│ a   ┆ b    │
+│ --- ┆ ---  │
+│ i64 ┆ f64  │
+╞═════╪══════╡
+│ 1   ┆ 0.5  │
+│ 2   ┆ 4.0  │
+│ 4   ┆ 13.0 │
+│ 4   ┆ 13.0 │
+└─────┴──────┘
+
+df.fill_null(strategy="zero")
+shape: (4, 2)
+┌─────┬──────┐
+│ a   ┆ b    │
+│ --- ┆ ---  │
+│ i64 ┆ f64  │
+╞═════╪══════╡
+│ 1   ┆ 0.5  │
+│ 2   ┆ 4.0  │
+│ 0   ┆ 0.0  │
+│ 4   ┆ 13.0 │
+└─────┴──────┘
+```
 
 
 
@@ -390,7 +441,7 @@ df.head(5)
 
 
 
-
+- https://pola-rs.github.io/polars/py-polars/html/reference/dataframe/api/polars.DataFrame.describe.html
 - https://calmcode.io/polars/read-csv.html
 - https://www.kaggle.com/datasets/hesh97/titanicdataset-traincsv
 - https://docusaurus.io/fr/docs/markdown-features/links
