@@ -18,7 +18,7 @@
 
 - [ Use case](#use-case):
 
-- Conclusion:
+- [Conclusion](#conclusion):
 
 # Introduction
 
@@ -395,6 +395,13 @@ shape: (4, 2)
 │ 4   ┆ 13.0 │
 └─────┴──────┘
 ```
+Convert categorical variables to dummy/indicator variables.
+
+```python
+df.to_dummies()
+```
+
+# Conclusion
 
 
 
@@ -446,10 +453,8 @@ shape: (4, 2)
 - https://www.kaggle.com/datasets/hesh97/titanicdataset-traincsv
 - https://docusaurus.io/fr/docs/markdown-features/links
 - https://pola-rs.github.io/polars-book/user-guide/notebooks/introduction_polars-py.html
-
-[source](https://towardsdatascience.com/pandas-vs-polars-a-syntax-and-speed-comparison-5aa54e27497e#0602)
-
-[source1](https://anamikayadav.hashnode.dev/polars-python-library-a-fast-and-efficient-alternative-to-pandas)
+- https://towardsdatascience.com/pandas-vs-polars-a-syntax-and-speed-comparison-5aa54e27497e#0602
+- https://anamikayadav.hashnode.dev/polars-python-library-a-fast-and-efficient-alternative-to-pandas
 
 
 
